@@ -1,0 +1,3545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' https://patitech.id data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+
+    <title>WA BLAST PATITECH</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1E90FF;
+            --primary-dark: #0F6FC7;
+            --primary-hover: #1ea952;
+            --secondary-color: #667eea;
+            --accent-color: #764ba2;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --danger-light: #fef2f2;
+            --bg-main: #f9fbff;
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --border-color: #dce7f7;
+  --shadow-sm: 0 2px 8px rgba(30, 144, 255, 0.05);
+  --shadow-md: 0 4px 12px rgba(30, 144, 255, 0.08);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius-sm: 0.375rem;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+            --radius-xl: 1rem;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow: hidden;
+        }
+
+        .app-container {
+            display: flex;
+            height: 100vh;
+            best-possible: contain;
+        }
+
+        /* Sidebar */
+.sidebar {
+  width: 230px;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f6ff 100%);
+  border-right: 1px solid #d9e3f0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(30, 144, 255, 0.05);
+}
+
+.sidebar-header {
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #1E90FF 0%, #0f6fc7 100%);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.app-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.app-logo img {
+  width: 120px;
+  padding: 0.75rem;
+  background: #ffffff;              /* latar belakang putih */
+  border-radius: 12px;              /* sudut membulat */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* bayangan halus */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-logo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(30, 144, 255, 0.3);
+}
+
+.app-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.app-subtitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+.sidebar-nav {
+  flex: 1;
+  padding: 1rem 0;
+  overflow-y: auto;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  color: #475569;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.nav-item i {
+  font-size: 1.1rem;
+  color: #1E90FF;
+}
+
+.nav-item:hover {
+  background: rgba(30, 144, 255, 0.08);
+  border-left-color: #1E90FF;
+  color: #0f6fc7;
+  transform: translateX(3px);
+}
+
+.nav-item.active {
+  background: rgba(30, 144, 255, 0.12);
+  border-left-color: #1E90FF;
+  color: #0f6fc7;
+  font-weight: 600;
+}
+
+.nav-item span {
+  font-size: 0.85rem;
+  flex: 1;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  background: linear-gradient(180deg, #f3f8ff 0%, #e6f0ff 100%);
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #d0e2fa;
+  text-align: center;
+  box-shadow: 0 -2px 6px rgba(30, 144, 255, 0.08);
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: #ffffff;
+  border: 1px solid #d0e2fa;
+  border-radius: 30px;
+  padding: 0.4rem 0.9rem;
+  box-shadow: 0 1px 4px rgba(30, 144, 255, 0.1);
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+  transition: all 0.3s ease;
+}
+
+.status-indicator.connected {
+  background: #1E90FF;
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.6);
+  animation: glow 2s infinite ease-in-out;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 6px rgba(30,144,255,0.4); }
+  50% { box-shadow: 0 0 12px rgba(30,144,255,0.8); }
+}
+
+.status-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #334155;
+  letter-spacing: 0.3px;
+  text-transform: capitalize;
+}
+
+/* Waktu di footer */
+.footer-time {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E90FF;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
+  font-family: 'Courier New', monospace;
+}
+
+
+
+        /* Specific fix for Send Messages text */
+        .nav-item[data-page="messages"] span {
+            white-space: nowrap;
+            overflow: visible;
+            text-overflow: unset;
+        }
+
+        .sidebar-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-tertiary);
+        }
+
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .status-indicator {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background: #ef4444;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.connected {
+            background: #10b981;
+        }
+
+        .status-indicator.connecting {
+            background: #f59e0b;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .status-text {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .main-header {
+            background: var(--bg-secondary);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+            min-width: 0;
+            gap: 1rem;
+        }
+
+        .page-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            white-space: nowrap;
+            flex: 1;
+            min-width: 0;
+            max-width: calc(100% - 300px);
+        }
+
+        .page-icon {
+            width: 2rem;
+            height: 2rem;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        #page-title-text {
+            white-space: nowrap;
+            flex: 1;
+            min-width: 0;
+            display: inline-block;
+        }
+
+        .header-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            flex-shrink: 0;
+            min-width: 0;
+        }
+
+        .left-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .right-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        #refresh-btn {
+            padding: 0.5rem;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #refresh-btn i {
+            font-size: 1rem;
+        }
+
+        #connect-btn {
+            padding: 0.5rem;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #connect-btn i {
+            font-size: 1rem;
+        }
+
+        #connect-main-btn {
+            padding: 0.5rem;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #connect-main-btn i {
+            font-size: 1rem;
+        }
+
+        .disconnect-buttons {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .disconnect-buttons .btn {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-sm {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.75rem;
+            border-radius: var(--radius-md);
+        }
+
+        .btn-xs {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.6875rem;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Metadata Badge Styles */
+        .metadata-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .contact-details-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details-section h3 {
+            color: var(--text-primary);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .contact-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-details-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .contact-details-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .contact-details-value {
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            padding: 0.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 0.375rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-details-value.empty {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Contact Details Modal Styles */
+        #contact-details-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 1rem;
+        }
+
+        .contact-details-modal-content {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-details-modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .contact-details-modal-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .contact-details-modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+        }
+
+        .contact-details-modal-close:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .contact-details-modal-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .contact-details-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-details-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .contact-details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+
+        .contact-details-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .contact-details-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+        .contact-details-value {
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            word-break: break-word;
+        }
+
+        .contact-details-value.empty {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 640px) {
+            .contact-details-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Compact Contact List Styles */
+        .contacts-table {
+            font-size: 0.875rem;
+        }
+
+        .contacts-table th,
+        .contacts-table td {
+            padding: 0.5rem 0.75rem;
+            vertical-align: middle;
+        }
+
+        .contacts-table th {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            color: var(--text-secondary);
+            background: var(--bg-tertiary);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .contacts-table td {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .contacts-table tr:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .contact-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.125rem;
+        }
+
+        .contact-details {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.2;
+        }
+
+        .contact-phone {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .contact-email {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            word-break: break-all;
+        }
+
+        .contact-company {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            max-width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .group-badge {
+            display: inline-block;
+            padding: 0.0625rem 0.25rem;
+            border-radius: 0.1875rem;
+            font-size: 0.70rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            background: var(--primary-color);
+            color: white;
+            margin: 0.03125rem;
+            line-height: 1.1;
+            max-width: 120px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Group column styling */
+        .contacts-table td:nth-child(5) {
+            width: 170px;
+            max-width: 170px;
+            padding: 0.25rem;
+        }
+
+        .contacts-table td:nth-child(5) .group-badge {
+            max-width: 170px;
+            font-size: 0.70rem;
+            padding: 0.05rem 0.2rem;
+        }
+
+        .group-blue {
+            background: rgba(59, 130, 246, 0.1);
+            color: rgb(59, 130, 246);
+        }
+
+        .metadata-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+            font-size: 0.625rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .btn-xs {
+            padding: 0.25rem 0.375rem;
+            font-size: 0.625rem;
+            border-radius: 0.25rem;
+        }
+
+        .contacts-table .btn-xs {
+            margin: 0 0.125rem;
+        }
+
+        /* Clickable Contact Name Styles */
+        .clickable-contact {
+            cursor: pointer !important;
+            color: var(--primary-color) !important;
+            text-decoration: underline !important;
+            transition: color 0.2s ease;
+        }
+
+        .clickable-contact:hover {
+            color: var(--primary-hover) !important;
+            text-decoration: none !important;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .dropdown-toggle {
+            border: none !important;
+            background: transparent !important;
+            color: var(--text-secondary) !important;
+            padding: 0.25rem 0.5rem !important;
+            font-size: 0.75rem !important;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .dropdown-toggle:hover {
+            background: var(--bg-tertiary) !important;
+            color: var(--text-primary) !important;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            z-index: 10002;
+            display: none;
+            min-width: 160px;
+            max-width: 200px;
+            padding: 0.5rem 0;
+            margin: 0.125rem 0 0;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            text-align: left;
+            list-style: none;
+            background-color: var(--bg-primary);
+            background-clip: padding-box;
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-item {
+            display: block;
+            width: 100%;
+            padding: 0.25rem 1rem;
+            clear: both;
+            font-weight: 400;
+            color: var(--text-primary);
+            text-align: inherit;
+            text-decoration: none;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 0;
+            transition: background-color 0.15s ease-in-out;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            color: var(--text-primary);
+            background-color: var(--bg-tertiary);
+        }
+
+        .dropdown-item.text-danger {
+            color: var(--danger-color) !important;
+        }
+
+        .dropdown-item.text-danger:hover {
+            color: var(--danger-hover) !important;
+            background-color: var(--danger-light);
+        }
+
+        /* Actions Column Z-index Fix */
+        .table td:last-child {
+            position: relative;
+            z-index: 10000;
+        }
+
+        .table td:last-child .dropdown {
+            z-index: 10001;
+        }
+
+        /* Force actions column to be above everything */
+        .table tr td:last-child {
+            position: relative;
+            z-index: 10000 !important;
+            background: var(--bg-primary);
+            width: 120px;
+            min-width: 120px;
+            max-width: 120px;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .table tr td:last-child .dropdown {
+            z-index: 10000 !important;
+        }
+
+        .table tr td:last-child .dropdown-menu {
+            position: absolute !important;
+            top: 100% !important;
+            right: 0 !important;
+            z-index: 10002 !important;
+            transform: none !important;
+            margin-left: 0 !important;
+        }
+
+        /* Ensure table rows don't overlap actions */
+        .table tr {
+            position: relative;
+            z-index: 1;
+        }
+
+        .table tr:hover {
+            z-index: 2;
+        }
+
+        .table tr td:last-child:hover {
+            z-index: 10003 !important;
+        }
+
+        /* Force actions column to be always visible */
+        .table td:last-child {
+            position: relative !important;
+            z-index: 10000 !important;
+            background: var(--bg-primary) !important;
+            isolation: isolate;
+            width: 120px !important;
+            min-width: 120px !important;
+            max-width: 120px !important;
+            text-align: center !important;
+            padding: 0.5rem !important;
+        }
+
+        .table td:last-child * {
+            position: relative;
+            z-index: 10001 !important;
+        }
+
+        .dropdown-divider {
+            height: 0;
+            margin: 0.5rem 0;
+            overflow: hidden;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Prevent overlap with other columns */
+        .table td:not(:last-child) {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Ensure metadata column doesn't interfere */
+        .table td:nth-last-child(2) {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Table header z-index fix */
+        .table thead th {
+            position: relative;
+            z-index: 10000;
+        }
+
+        .table thead th:last-child {
+            position: relative;
+            z-index: 10001;
+            background: var(--bg-tertiary) !important;
+        }
+
+        /* Ensure table header stays above dropdown */
+        .table thead {
+            position: relative;
+            z-index: 10000;
+        }
+
+        /* Prevent dropdown from overlapping metadata column */
+        .table td:nth-last-child(2) {
+            position: relative;
+            z-index: 10001;
+            background: var(--bg-primary);
+        }
+
+        /* Ensure metadata column content stays above dropdown */
+        .table td:nth-last-child(2) * {
+            position: relative;
+            z-index: 10001;
+        }
+
+        /* Dropdown menu positioning for actions column */
+        .table tr td:last-child .dropdown-menu {
+            position: absolute !important;
+            top: 100% !important;
+            right: 0 !important;
+            z-index: 10002 !important;
+            transform: none !important;
+            margin-left: 0 !important;
+        }
+
+        /* Ensure dropdown doesn't overlap metadata */
+        .table tr td:last-child .dropdown-menu.show {
+            position: absolute !important;
+            top: 100% !important;
+            right: 0 !important;
+            z-index: 10002 !important;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            padding: 1rem 0;
+        }
+
+        .pagination-info {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin: 0 1rem;
+        }
+
+        .pagination-controls {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .pagination-btn {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+            background: var(--bg-tertiary);
+            border-color: var(--primary-color);
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .pagination-btn.active:hover {
+            background: var(--primary-hover);
+        }
+
+        .pagination-jump {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 1rem;
+        }
+
+        .pagination-jump input {
+            width: 60px;
+            padding: 0.25rem 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        .pagination-per-page {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 1rem;
+        }
+
+        .pagination-per-page select {
+            width: 80px;
+            padding: 0.25rem 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        /* List Controls Styling */
+        .list-controls {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 0.5rem 0 1rem 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+        }
+
+        .list-controls .pagination-per-page {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+        }
+
+        .list-controls .pagination-per-page select {
+            width: 80px;
+            padding: 0.25rem 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        /* Search Box Styles */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-container-right {
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        /* Header Actions Layout */
+        .header-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .left-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .right-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container-inline {
+            max-width: 400px;
+            min-width: 300px;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            z-index: 2;
+            pointer-events: none;
+            font-size: 0.875rem;
+        }
+
+        .search-input {
+            padding-left: 2.5rem;
+            padding-right: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            text-indent: 0;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-muted);
+            opacity: 1;
+            margin-left: 0;
+            padding-left: 0;
+            font-size: 0.9rem;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        #clear-search-btn {
+            position: absolute;
+            right: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        #clear-search-btn:hover {
+            color: var(--text-primary);
+        }
+
+        /* Message Log Styles */
+        .log-filters {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .log-filters .btn {
+            margin: 0;
+        }
+
+        .log-filters .btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-badge.success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .status-badge.failed {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .status-badge.pending {
+            background: rgba(245, 158, 11, 0.1);
+            color: #d97706;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .status-badge i {
+            margin-right: 0.25rem;
+        }
+
+        .message-preview {
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-phone {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .phone-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #25D366;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+        }
+
+        .phone-link:hover {
+            background: rgba(37, 211, 102, 0.1);
+            color: #128C7E;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .phone-link i {
+            font-size: 1rem;
+        }
+
+        .resend-btn {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            border-radius: 0.375rem;
+        }
+
+        /* Form Input Styles - Enable Select All and Copy-Paste */
+        .form-input,
+        .form-textarea,
+        .autocomplete-input,
+        textarea,
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="search"],
+        input[type="password"] {
+            user-select: text !important;
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            -webkit-touch-callout: default !important;
+            -webkit-user-drag: none !important;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .autocomplete-input:focus,
+        textarea:focus,
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="url"]:focus,
+        input[type="search"]:focus,
+        input[type="password"]:focus {
+            user-select: text !important;
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            -webkit-touch-callout: default !important;
+            -webkit-user-drag: none !important;
+        }
+
+        /* Ensure form inputs are not disabled for text selection */
+        .form-input,
+        .form-textarea,
+        .autocomplete-input,
+        textarea,
+        input {
+            pointer-events: auto !important;
+            cursor: text !important;
+        }
+
+        /* Enable context menu for form inputs */
+        .form-input,
+        .form-textarea,
+        .autocomplete-input,
+        textarea,
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="search"],
+        input[type="password"] {
+            -webkit-touch-callout: default !important;
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        /* Remove any restrictions on text selection */
+        * {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        /* Override any conflicting styles for textareas */
+        textarea {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+            -webkit-user-modify: read-write !important;
+            -moz-user-modify: read-write !important;
+            user-modify: read-write !important;
+            pointer-events: auto !important;
+            cursor: text !important;
+        }
+
+        /* Ensure no event prevention on textareas */
+        textarea * {
+            pointer-events: auto !important;
+        }
+
+        /* Override any global user-select restrictions for form elements */
+        .form-input,
+        .form-textarea,
+        .autocomplete-input,
+        textarea,
+        input {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+            -webkit-touch-callout: default !important;
+        }
+
+        /* Specific styles for template content textarea */
+        #template-content {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+            -webkit-touch-callout: default !important;
+            pointer-events: auto !important;
+            cursor: text !important;
+            resize: vertical !important;
+            -webkit-user-modify: read-write !important;
+            -moz-user-modify: read-write !important;
+            user-modify: read-write !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            /* Ensure no event prevention */
+            -webkit-user-drag: none !important;
+            -moz-user-drag: none !important;
+            user-drag: none !important;
+            /* Force enable text editing */
+            -webkit-text-security: none !important;
+            -moz-text-security: none !important;
+            text-security: none !important;
+            /* Remove any input restrictions */
+            -webkit-input-placeholder: none !important;
+            -moz-placeholder: none !important;
+            placeholder: none !important;
+        }
+
+        #template-content:focus {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+            -webkit-touch-callout: default !important;
+            -webkit-user-modify: read-write !important;
+            -moz-user-modify: read-write !important;
+            user-modify: read-write !important;
+        }
+
+        /* Force enable text editing for template content */
+        #template-content[contenteditable="true"] {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+            -webkit-user-modify: read-write !important;
+            -moz-user-modify: read-write !important;
+            user-modify: read-write !important;
+        }
+
+        /* Autocomplete Styles */
+        .autocomplete-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .autocomplete-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+        .autocomplete-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .autocomplete-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+
+        .autocomplete-dropdown.show {
+            display: block;
+        }
+
+        .autocomplete-item {
+            padding: 0.75rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s ease;
+        }
+
+        .autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .autocomplete-item:hover,
+        .autocomplete-item.selected {
+            background: var(--bg-tertiary);
+        }
+
+        .autocomplete-item-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .autocomplete-item-details {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .autocomplete-no-results {
+            padding: 0.75rem;
+            color: var(--text-muted);
+            font-style: italic;
+            text-align: center;
+        }
+
+        .selected-contacts-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .selected-contact-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .selected-contact-tag .remove-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 0.75rem;
+            padding: 0;
+            margin-left: 0.25rem;
+        }
+
+        .selected-contact-tag .remove-btn:hover {
+            color: #fca5a5;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* === Main Body === */
+.main-body {
+  background: var(--bg-main);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  overflow-y: auto;
+}
+
+/* === Page Container === */
+.page-content {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: none;
+}
+
+.page-content.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* === Tables === */
+.table-container {
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.table th {
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--primary-dark);
+}
+
+.table td {
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.table tr:hover {
+  background: #f8fafc;
+}
+
+/* === Buttons === */
+.btn {
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-dark);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+}
+
+.btn-secondary:hover {
+  background: #cbd5e1;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+  border: 1px solid #dc2626;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+/* === Empty States === */
+.empty-state {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-secondary);
+}
+
+.empty-state i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* === Pagination & Forms === */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.form-input, select {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.form-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.2);
+  outline: none;
+}
+
+/* === Fade in animation === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+        /* Page Content */
+        .page-content {
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Dashboard */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: white;
+        }
+
+        .stat-icon.blue {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+
+        .stat-icon.green {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        }
+
+        .stat-icon.orange {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .stat-icon.red {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        .stat-content h3 {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-change {
+            font-size: 0.75rem;
+            color: #10b981;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* Loading States */
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 3rem;
+            height: 3rem;
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .loading-subtext {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Progress Modal Styles */
+        .progress-container {
+            padding: 1rem 0;
+        }
+
+        .progress-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-value.success {
+            color: var(--success-color);
+        }
+
+        .stat-value.error {
+            color: var(--error-color);
+        }
+
+        .progress-bar-container {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: var(--bg-tertiary);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+            border-radius: 6px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-percentage {
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .current-message {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .current-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .current-contact {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .progress-logs {
+            margin-bottom: 1.5rem;
+        }
+
+        .logs-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .logs-header span {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .logs-content {
+            max-height: 200px;
+            overflow-y: auto;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-lg);
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .log-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.875rem;
+        }
+
+        .log-item:last-child {
+            border-bottom: none;
+        }
+
+        .log-item.info {
+            color: var(--info-color);
+        }
+
+        .log-item.success {
+            color: var(--success-color);
+        }
+
+        .log-item.error {
+            color: var(--error-color);
+        }
+
+        .log-item.warning {
+            color: var(--warning-color);
+        }
+
+        .progress-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Connection Status */
+        .connection-panel {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .connection-panel .btn {
+            display: block;
+            margin: 1rem auto;
+            max-width: 200px;
+        }
+
+        .connection-status-large {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-indicator-large {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #ef4444;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator-large.connected {
+            background: #10b981;
+        }
+
+        .status-indicator-large.connecting {
+            background: #f59e0b;
+        }
+
+        .connection-text {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .connection-description {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .progress-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .progress-percentage {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 0.75rem;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: var(--radius-lg);
+        }
+
+        .progress-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Tables */
+        .table-container {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-xl);
+            overflow: visible;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            position: relative;
+            z-index: 1;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            position: relative;
+            z-index: 1;
+            table-layout: fixed;
+        }
+
+        /* Actions column header */
+        .table th:last-child {
+            width: 120px;
+            min-width: 120px;
+            max-width: 120px;
+            position: relative;
+            z-index: 10000;
+            text-align: center;
+            padding: 1rem 0.5rem;
+        }
+
+        .table tbody tr {
+            position: relative;
+            z-index: 1;
+        }
+
+        .table tbody tr:hover {
+            z-index: 2;
+        }
+
+        .table th {
+            background: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 10000;
+            font-size: 0.875rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .table tbody tr:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Contact Groups Table - Column Widths */
+        #contact-groups-page .table {
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        /* Name column - first column */
+        #contact-groups-page .table th:first-child,
+        #contact-groups-page .table td:first-child {
+            width: 200px !important;
+            min-width: 200px !important;
+            max-width: 200px !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: table-cell;
+        }
+
+        /* Ensure group badge doesn't break layout */
+        #contact-groups-page .table td:first-child .group-badge {
+            display: inline-block;
+            max-width: 180px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Description column - flexible width */
+        #contact-groups-page .table th:nth-child(2),
+        #contact-groups-page .table td:nth-child(2) {
+            min-width: 150px;
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Contact Count column - fixed width */
+        #contact-groups-page .table th:nth-child(3),
+        #contact-groups-page .table td:nth-child(3) {
+            width: 120px;
+            min-width: 120px;
+            max-width: 120px;
+            text-align: center;
+        }
+
+        /* Actions column - fixed width */
+        #contact-groups-page .table th:last-child,
+        #contact-groups-page .table td:last-child {
+            width: 120px;
+            min-width: 120px;
+            max-width: 120px;
+            text-align: center;
+        }
+
+        /* Force table to respect column widths */
+        #contact-groups-page .table-container {
+            overflow-x: auto;
+        }
+
+        #contact-groups-page .table {
+            min-width: 100%;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+
+        /* Empty States */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .empty-state h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-state p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-lg);
+            color: white;
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: slideIn 0.3s ease-out;
+            max-width: 400px;
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        .notification.info {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--radius-xl);
+            text-align: left;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border-color);
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .modal-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        .qr-code {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .qr-code img {
+            max-width: 200px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .modal-content .header-actions {
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+        }
+
+        .modal-content .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-content .form-label {
+            margin-bottom: 0.75rem;
+        }
+
+        .form-text {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 200px;
+            }
+            
+            .main-header {
+                padding: 1rem 1.5rem;
+                gap: 0.5rem;
+            }
+            
+            .page-title {
+                font-size: 1.5rem;
+                max-width: calc(100% - 250px);
+            }
+            
+            #page-title-text {
+                font-size: 1.5rem;
+            }
+            
+            #refresh-btn {
+                min-width: 2rem;
+                height: 2rem;
+                padding: 0.25rem;
+            }
+            
+            #connect-btn {
+                min-width: 2rem;
+                height: 2rem;
+                padding: 0.25rem;
+            }
+            
+            #connect-main-btn {
+                min-width: 2rem;
+                height: 2rem;
+                padding: 0.25rem;
+            }
+            
+            .disconnect-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .disconnect-buttons .btn {
+                width: 100%;
+            }
+            
+            .main-body {
+                padding: 1.5rem;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-tertiary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+        .live-wa-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.wa-browser-frame {
+  margin-top: 1rem;
+  height: 600px;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background: #f1f5f9;
+  overflow: hidden;
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="app-logo">
+                    <a href="https://patitech.id" target="_blank" rel="noopener noreferrer" class="logo-link">
+                        <img src="https://patitech.id/assets/patitech-logo-CuQFfCsQ.png" alt="PATITECH Logo" />
+                    </a>
+                    <div class="app-title">WA BLAST PATITECH</div>
+                    <div class="app-subtitle">Desktop v2.0</div>
+                </div>
+
+
+            </div>
+        
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-page="live-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Live WhatsApp</span>
+                </a>
+
+                <a href="#" class="nav-item" data-page="contacts">
+                    <i class="fas fa-address-book"></i>
+                    <span>Kontak</span>
+                </a>
+                <a href="#" class="nav-item" data-page="contact-groups">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Grup</span>
+                </a>
+                <a href="#" class="nav-item" data-page="templates">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Template</span>
+                </a>
+                <a href="#" class="nav-item" data-page="messages">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Kirim Pesan</span>
+                </a>
+                <a href="#" class="nav-item" data-page="scheduler">
+                    <i class="fas fa-clock"></i>
+                    <span>Penjadwal</span>
+                </a>
+                <a href="#" class="nav-item" data-page="analytics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analitik</span>
+                </a>
+                <a href="#" class="nav-item" data-page="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Pengaturan</span>
+                </a>
+            </nav>
+
+        
+            <div class="sidebar-footer">
+                <div class="connection-status">
+                    <div class="status-indicator" id="status-indicator"></div>
+                    <span class="status-text" id="status-text">Disconnected</span>
+                </div>
+                <div class="footer-time" id="footer-time">--:--:--</div>
+                <span class="status-text" id="status-text">PATITECH ACADEMY</span>
+            </div>
+
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="main-header">
+                <h1 class="page-title">
+                    <div class="page-icon" id="page-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <span id="page-title-text">Dashboard</span>
+                </h1>
+                <div class="header-actions">
+                    <div class="left-actions">
+                        <!-- Empty for now, can add other buttons here -->
+                    </div>
+                    <div class="right-actions">
+                        <button class="btn btn-primary" id="connect-btn" title="Connect WhatsApp">
+                            <i class="fas fa-link"></i>
+                        </button>
+                        <button class="btn btn-secondary" id="refresh-btn" title="Refresh">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-body">
+                <!-- Dashboard Page -->
+                <div class="page-content active" id="dashboard-page">
+                    <!-- Connection Panel -->
+                    <div class="connection-panel" id="connection-panel">
+                        <div class="connection-status-large">
+                            <div class="status-indicator-large" id="status-indicator-large"></div>
+                            <span class="connection-text" id="connection-text">WhatsApp Disconnected</span>
+                        </div>
+                        <p class="connection-description" id="connection-description">
+                            Connect to WhatsApp to start sending bulk messages
+                        </p>
+                    <button class="btn btn-primary" id="connect-main-btn" title="Connect to WhatsApp">
+                        <i class="fas fa-link"></i>
+                    </button>
+                    <div class="disconnect-buttons" id="disconnect-buttons" style="display: none;">
+                        <button class="btn btn-danger" id="disconnect-btn">
+                            <i class="fas fa-unlink"></i>
+                            Disconnect WhatsApp
+                        </button>
+                        <button class="btn btn-secondary" id="force-disconnect-btn">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Force Disconnect & Clear Session
+                        </button>
+                    </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon blue">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Total Contacts</h3>
+                                    <div class="stat-value" id="total-contacts">0</div>
+                                    <div class="stat-change">
+                                        <i class="fas fa-arrow-up"></i>
+                                        +0 this week
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon green">
+                                    <i class="fas fa-paper-plane"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Messages Sent</h3>
+                                    <div class="stat-value" id="messages-sent">0</div>
+                                    <div class="stat-change">
+                                        <i class="fas fa-arrow-up"></i>
+                                        +0 today
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon orange">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Scheduled</h3>
+                                    <div class="stat-value" id="scheduled-count">0</div>
+                                    <div class="stat-change">
+                                        <i class="fas fa-clock"></i>
+                                        0 pending
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon red">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Failed</h3>
+                                    <div class="stat-value" id="failed-count">0</div>
+                                    <div class="stat-change">
+                                        <i class="fas fa-arrow-down"></i>
+                                        0 today
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Container -->
+                    <div class="progress-container" id="progress-container" style="display: none;">
+                        <div class="progress-header">
+                            <span class="progress-title">Sending Messages</span>
+                            <span class="progress-percentage" id="progress-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="progress-details">
+                            <span id="progress-text">Preparing to send...</span>
+                            <span id="current-contact">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contacts Page -->
+                <div class="page-content" id="contacts-page">
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <div class="header-actions">
+                            <div class="left-actions">
+                                <button class="btn btn-secondary" id="upload-csv-btn">
+                                    <i class="fas fa-upload"></i>
+                                    Upload CSV
+                                </button>
+                                <button class="btn btn-primary" id="add-contact-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add Contact
+                                </button>
+                                <button class="btn btn-secondary" id="bulk-assign-group-btn" style="display: none;">
+                                    <i class="fas fa-users"></i>
+                                    Assign to Group
+                                </button>
+                            </div>
+                            <div class="right-actions">
+                                <div class="search-container-inline">
+                                    <div class="search-input-wrapper">
+                                        <i class="fas fa-search search-icon"></i>
+                                <input type="text" class="form-input search-input" id="contacts-search" 
+                                       placeholder="Search contacts..." 
+                                       autocomplete="off">
+                                        <button class="btn btn-secondary btn-sm" id="clear-search-btn" style="display: none;">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- List Per View Controls -->
+                    <div class="list-controls" id="contacts-list-controls" style="display: none;">
+                        <div class="pagination-per-page">
+                            <span>Show:</span>
+                            <select id="contacts-per-page-select" class="form-input">
+                                <option value="10">10</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="300">300</option>
+                                <option value="500">500</option>
+                            </select>
+                            <span>per page</span>
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="table contacts-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40px;">
+                                        <input type="checkbox" id="select-all-contacts" style="margin: 0;">
+                                    </th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Company</th>
+                                    <th>Group</th>
+                                    <th>Metadata</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contacts-table-body">
+                                <tr>
+                                    <td colspan="7" class="empty-state">
+                                        <i class="fas fa-users"></i>
+                                        <h3>No contacts loaded</h3>
+                                        <p>Import a CSV file or add contacts manually to get started</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Live WhatsApp Page -->
+<div class="page-content" id="live-whatsapp-page">
+    <div class="live-wa-container">
+        <h2>
+            <i class="fab fa-whatsapp" style="color:#25D366; margin-right:8px;"></i>
+            Live WhatsApp Session
+        </h2>
+        <p>Tampilan WhatsApp Web Anda akan muncul di jendela utama.</p>
+    </div>
+</div>
+
+
+                    
+                    <!-- Pagination for Contacts -->
+                    
+                    <div class="pagination" id="contacts-pagination" style="display: none;">
+                        <div class="pagination-info" id="contacts-pagination-info">
+                            Showing 1-10 of 0 contacts
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn" id="contacts-prev-btn" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div id="contacts-page-numbers"></div>
+                            <button class="pagination-btn" id="contacts-next-btn" disabled>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="pagination-jump">
+                            <span>Go to:</span>
+                            <input type="number" id="contacts-jump-input" min="1" placeholder="1">
+                            <button class="pagination-btn" id="contacts-jump-btn">Go</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Groups Page -->
+                <div class="page-content" id="contact-groups-page">
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <div class="header-actions">
+                            <button class="btn btn-primary" id="add-contact-group-btn">
+                                <i class="fas fa-plus"></i>
+                                Add Group
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- List Per View Controls -->
+                    <div class="list-controls" id="groups-list-controls" style="display: none;">
+                        <div class="pagination-per-page">
+                            <span>Show:</span>
+                            <select id="groups-per-page-select" class="form-input">
+                                <option value="10">10</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="300">300</option>
+                                <option value="500">500</option>
+                            </select>
+                            <span>per page</span>
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Contact Count</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contact-groups-table-body">
+                                <tr>
+                                    <td colspan="4" class="empty-state">
+                                        <i class="fas fa-layer-group"></i>
+                                        <h3>No groups created</h3>
+                                        <p>Create your first group to organize your contacts</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Pagination for Groups -->
+                    
+                    <div class="pagination" id="groups-pagination" style="display: none;">
+                        <div class="pagination-info" id="groups-pagination-info">
+                            Showing 1-10 of 0 groups
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn" id="groups-prev-btn" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div id="groups-page-numbers"></div>
+                            <button class="pagination-btn" id="groups-next-btn" disabled>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="pagination-jump">
+                            <span>Go to:</span>
+                            <input type="number" id="groups-jump-input" min="1" placeholder="1">
+                            <button class="pagination-btn" id="groups-jump-btn">Go</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Templates Page -->
+                <div class="page-content" id="templates-page">
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <div class="header-actions">
+                            <button class="btn btn-primary" id="add-template-btn">
+                                <i class="fas fa-plus"></i>
+                                Add Template
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Content Preview</th>
+                                    <th>Variables</th>
+                                    <th>Category</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="templates-table-body">
+                                <tr>
+                                    <td colspan="5" class="empty-state">
+                                        <i class="fas fa-file-alt"></i>
+                                        <h3>No templates created</h3>
+                                        <p>Create your first template to get started</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Pagination for Templates -->
+                    <!-- List Per View Controls -->
+                    <div class="list-controls" id="templates-list-controls" style="display: none;">
+                        <div class="pagination-per-page">
+                            <span>Show:</span>
+                            <select id="templates-per-page-select" class="form-input">
+                                <option value="10">10</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="300">300</option>
+                                <option value="500">500</option>
+                            </select>
+                            <span>per page</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination" id="templates-pagination" style="display: none;">
+                        <div class="pagination-info" id="templates-pagination-info">
+                            Showing 1-10 of 0 templates
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn" id="templates-prev-btn" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div id="templates-page-numbers"></div>
+                            <button class="pagination-btn" id="templates-next-btn" disabled>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="pagination-jump">
+                            <span>Go to:</span>
+                            <input type="number" id="templates-jump-input" min="1" placeholder="1">
+                            <button class="pagination-btn" id="templates-jump-btn">Go</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages Page -->
+                <div class="page-content" id="messages-page">
+                    <div class="form-group">
+                        <label class="form-label">Select Template</label>
+                        <select class="form-input" id="message-template">
+                            <option value="">Choose a template...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Target Contacts</label>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                <input type="radio" name="message-target-type" value="contacts" checked style="margin-right: 0.5rem;">
+                                Select Individual Contacts
+                            </label>
+                            <label style="display: flex; align-items: center;">
+                                <input type="radio" name="message-target-type" value="groups" style="margin-right: 0.5rem;">
+                                Select Contact Groups
+                            </label>
+                        </div>
+                        <div class="autocomplete-container">
+                            <input type="text" class="autocomplete-input" id="message-contacts-autocomplete" 
+                                   placeholder="Type to search contacts..." autocomplete="off">
+                            <div class="autocomplete-dropdown" id="message-contacts-dropdown"></div>
+                        </div>
+                        <div class="selected-contacts-list" id="message-selected-contacts"></div>
+                        <select class="form-input" id="message-groups-select" multiple style="display: none;">
+                            <option value="">Choose groups...</option>
+                        </select>
+                        <small class="form-text">Hold Ctrl/Cmd to select multiple contacts or groups</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Message Preview</label>
+                        <div class="form-input form-textarea" id="message-preview" style="background: var(--bg-tertiary);">
+                            Select a template to preview the message
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Delay Between Messages</label>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                <input type="radio" name="delay-type" value="fixed" checked style="margin-right: 0.5rem;">
+                                Fixed Delay
+                            </label>
+                            <label style="display: flex; align-items: center;">
+                                <input type="radio" name="delay-type" value="random" style="margin-right: 0.5rem;">
+                                Random Delay
+                            </label>
+                        </div>
+                        
+                        <!-- Fixed Delay -->
+                        <div id="fixed-delay-container">
+                            <input type="number" class="form-input" id="message-delay" value="3" min="1" max="60">
+                            <small class="form-text">Fixed delay in seconds between messages</small>
+                        </div>
+                        
+                        <!-- Random Delay -->
+                        <div id="random-delay-container" style="display: none;">
+                            <div style="margin-bottom: 1rem;">
+                                <label class="form-label" style="font-size: 0.875rem; margin-bottom: 0.5rem;">Quick Presets:</label>
+                                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                    <button type="button" class="btn btn-xs btn-secondary" onclick="setRandomDelay(3, 5)">3-5 sec</button>
+                                    <button type="button" class="btn btn-xs btn-secondary" onclick="setRandomDelay(7, 9)">7-9 sec</button>
+                                    <button type="button" class="btn btn-xs btn-secondary" onclick="setRandomDelay(10, 15)">10-15 sec</button>
+                                    <button type="button" class="btn btn-xs btn-secondary" onclick="setRandomDelay(20, 30)">20-30 sec</button>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; align-items: center;">
+                                <div>
+                                    <label class="form-label" style="font-size: 0.875rem; margin-bottom: 0.25rem;">Min Delay (seconds)</label>
+                                    <input type="number" class="form-input" id="min-delay" value="3" min="1" max="60" style="width: 80px;">
+                                </div>
+                                <div>
+                                    <label class="form-label" style="font-size: 0.875rem; margin-bottom: 0.25rem;">Max Delay (seconds)</label>
+                                    <input type="number" class="form-input" id="max-delay" value="5" min="1" max="60" style="width: 80px;">
+                                </div>
+                            </div>
+                            <small class="form-text">Random delay between min and max values</small>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" id="send-messages-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Messages
+                    </button>
+                </div>
+
+                <!-- Scheduler Page -->
+                <div class="page-content" id="scheduler-page">
+                    <div class="page-header">
+                        <button class="btn btn-primary" onclick="showAddScheduledTaskModal()" style="margin-bottom: 1rem;">
+                            <i class="fas fa-plus"></i>
+                            Add Scheduled Task
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Template</th>
+                                    <th>Scheduled Time</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scheduler-table-body">
+                                <tr>
+                                    <td colspan="5" class="empty-state">
+                                        <i class="fas fa-clock"></i>
+                                        <h3>No scheduled messages</h3>
+                                        <p>Create a new scheduled message to get started</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Pagination for Scheduler -->
+                    <!-- List Per View Controls -->
+                    <div class="list-controls" id="scheduler-list-controls" style="display: none;">
+                        <div class="pagination-per-page">
+                            <span>Show:</span>
+                            <select id="scheduler-per-page-select" class="form-input">
+                                <option value="10">10</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="300">300</option>
+                                <option value="500">500</option>
+                            </select>
+                            <span>per page</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination" id="scheduler-pagination" style="display: none;">
+                        <div class="pagination-info" id="scheduler-pagination-info">
+                            Showing 1-10 of 0 scheduled tasks
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn" id="scheduler-prev-btn" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div id="scheduler-page-numbers"></div>
+                            <button class="pagination-btn" id="scheduler-next-btn" disabled>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="pagination-jump">
+                            <span>Go to:</span>
+                            <input type="number" id="scheduler-jump-input" min="1" placeholder="1">
+                            <button class="pagination-btn" id="scheduler-jump-btn">Go</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Page -->
+                <div class="page-content" id="analytics-page">
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon blue">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Messages Today</h3>
+                                    <div class="stat-value" id="today-messages">0</div>
+                                    <div class="stat-change">
+                                        <i class="fas fa-arrow-up"></i>
+                                        +0% from yesterday
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <div class="stat-icon green">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Success Rate</h3>
+                                    <div class="stat-value" id="success-rate">0%</div>
+                                    <div class="stat-change">
+                                        <i class="fas fa-arrow-up"></i>
+                                        +0% from last week
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Message Log Table -->
+                    <div class="form-group" style="margin-top: 2rem;">
+                        <div class="header-actions">
+                            <h3 style="margin: 0; color: var(--text-primary);">
+                                <i class="fas fa-list-alt" style="margin-right: 0.5rem; color: var(--primary-color);"></i>
+                                Message Log
+                            </h3>
+                            <div class="log-filters">
+                                <button class="btn btn-secondary btn-sm" id="filter-all-logs" data-filter="all">
+                                    <i class="fas fa-list"></i> All
+                                </button>
+                                <button class="btn btn-success btn-sm" id="filter-success-logs" data-filter="success">
+                                    <i class="fas fa-check"></i> Success
+                                </button>
+                                <button class="btn btn-danger btn-sm" id="filter-failed-logs" data-filter="failed">
+                                    <i class="fas fa-times"></i> Failed
+                                </button>
+                                <button class="btn btn-secondary btn-sm" id="refresh-logs-btn">
+                                    <i class="fas fa-refresh"></i> Refresh
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="table" id="message-logs-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Contact</th>
+                                    <th>Phone</th>
+                                    <th>Message</th>
+                                    <th>Sent At</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="message-logs-table-body">
+                                <tr>
+                                    <td colspan="6" class="empty-state">
+                                        <i class="fas fa-list-alt"></i>
+                                        <h3>No message logs available</h3>
+                                        <p>Send some messages to see the log here</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Pagination for Analytics -->
+                    <!-- List Per View Controls -->
+                    <div class="list-controls" id="analytics-list-controls" style="display: none;">
+                        <div class="pagination-per-page">
+                            <span>Show:</span>
+                            <select id="analytics-per-page-select" class="form-input">
+                                <option value="10">10</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="300">300</option>
+                                <option value="500">500</option>
+                            </select>
+                            <span>per page</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination" id="analytics-pagination" style="display: none;">
+                        <div class="pagination-info" id="analytics-pagination-info">
+                            Showing 1-10 of 0 message logs
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn" id="analytics-prev-btn" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div id="analytics-page-numbers"></div>
+                            <button class="pagination-btn" id="analytics-next-btn" disabled>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="pagination-jump">
+                            <span>Go to:</span>
+                            <input type="number" id="analytics-jump-input" min="1" placeholder="1">
+                            <button class="pagination-btn" id="analytics-jump-btn">Go</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Page -->
+                <div class="page-content" id="settings-page">
+                    <div class="table-container">
+                        <div style="padding: 2rem;">
+                            <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Application Settings</h3>
+                            <div class="form-group">
+                                <label class="form-label">Default Message Delay (seconds)</label>
+                                <input type="number" class="form-input" id="default-delay" value="3" min="1" max="60">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <input type="checkbox" id="auto-save-templates" checked style="margin-right: 0.5rem;">
+                                    Auto-save Templates
+                                </label>
+                            </div>
+                            <button class="btn btn-primary" id="save-settings-btn">
+                                <i class="fas fa-save"></i>
+                                Save Settings
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Modal -->
+    <div class="modal" id="loading-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+                <div class="loading-text" id="loading-text">Connecting to WhatsApp...</div>
+                <div class="loading-subtext" id="loading-subtext">Please wait while we establish connection</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QR Code Modal -->
+    <div class="modal" id="qr-modal" style="display: none;">
+        <div class="modal-content">
+            <h2 class="modal-title">Connect WhatsApp</h2>
+            <p class="modal-description">Scan the QR code with your WhatsApp mobile app</p>
+            <div class="qr-code" id="qr-code-container">
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Generating QR code...</div>
+                </div>
+            </div>
+            <div class="modal-description">
+                Open WhatsApp on your phone<br>
+                Go to Menu > Linked Devices > Link a Device<br>
+                Scan this QR code
+            </div>
+            <button class="btn btn-secondary" onclick="closeQRModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Add Contact Modal -->
+    <div class="modal" id="add-contact-modal" style="display: none;">
+        <div class="modal-content">
+            <h2 class="modal-title">Add Contact</h2>
+            <form id="add-contact-form">
+                <div class="form-group">
+                    <label class="form-label">Name *</label>
+                    <input type="text" class="form-input" id="contact-name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone *</label>
+                    <input type="text" class="form-input" id="contact-phone" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" id="contact-email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Company</label>
+                    <input type="text" class="form-input" id="contact-company">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contact Group</label>
+                    <select class="form-input" id="contact-group">
+                        <option value="">Select a group...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Additional Info (JSON)</label>
+                    <textarea class="form-input form-textarea" id="contact-metadata" placeholder='{"department": "IT", "position": "Developer"}'></textarea>
+                </div>
+                <div class="header-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeAddContactModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Contact</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Group Modal -->
+    <div class="modal" id="add-contact-group-modal" style="display: none;">
+        <div class="modal-content">
+            <h2 class="modal-title">Add Group</h2>
+            <form id="add-contact-group-form">
+                <div class="form-group">
+                    <label class="form-label">Name *</label>
+                    <input type="text" class="form-input" id="group-name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-input form-textarea" id="group-description" placeholder="Describe this group..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Color</label>
+                    <select class="form-input" id="group-color">
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="orange">Orange</option>
+                        <option value="red">Red</option>
+                        <option value="purple">Purple</option>
+                        <option value="gray">Gray</option>
+                    </select>
+                </div>
+                <div class="header-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeAddContactGroupModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Group</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bulk Assign Group Modal -->
+    <div class="modal" id="bulk-assign-group-modal" style="display: none;">
+        <div class="modal-content">
+            <h2 class="modal-title">Assign Contacts to Group</h2>
+            <div class="form-group">
+                <label class="form-label">Select Group:</label>
+                <select class="form-input" id="bulk-group-select">
+                    <option value="">Choose a group...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Selected Contacts:</label>
+                <div id="selected-contacts-list" style="max-height: 200px; overflow-y: auto; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-lg); background: var(--bg-tertiary);">
+                    <p style="color: var(--text-muted); font-size: 0.875rem;">No contacts selected</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button type="button" class="btn btn-secondary" onclick="closeBulkAssignGroupModal()">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="confirmBulkAssignGroup()">Assign to Group</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Template Modal -->
+    <div class="modal" id="add-template-modal" style="display: none;">
+        <div class="modal-content">
+            <h2 class="modal-title">Add Template</h2>
+            <form id="add-template-form">
+                <div class="form-group">
+                    <label class="form-label">Template Name *</label>
+                    <input type="text" class="form-input" id="template-name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select class="form-input" id="template-category">
+                        <option value="general">General</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="notification">Notification</option>
+                        <option value="reminder">Reminder</option>
+                        <option value="promotion">Promotion</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Message Content *</label>
+                    <textarea class="form-input form-textarea" id="template-content" required placeholder="Hello {{name}}, this is a message for {{company}}..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Variables (comma-separated)</label>
+                    <input type="text" class="form-input" id="template-variables" placeholder="name, company, phone, email">
+                </div>
+                <div class="header-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeAddTemplateModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Template</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Scheduled Task Modal -->
+    <div class="modal" id="add-scheduled-task-modal" style="display: none;">
+        <div class="modal-content">
+            <h2 class="modal-title">Add Scheduled Task</h2>
+            <form onsubmit="event.preventDefault(); addScheduledTask();">
+                <div class="form-group">
+                    <label class="form-label">Task Name</label>
+                    <input type="text" class="form-input" id="scheduled-task-name" placeholder="Enter task name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Template</label>
+                    <select class="form-input" id="scheduled-template-select" required>
+                        <option value="">Choose a template...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Target Contacts</label>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <input type="radio" name="scheduled-target-type" value="contacts" checked style="margin-right: 0.5rem;">
+                            Select Individual Contacts
+                        </label>
+                        <label style="display: flex; align-items: center;">
+                            <input type="radio" name="scheduled-target-type" value="groups" style="margin-right: 0.5rem;">
+                            Select Contact Groups
+                        </label>
+                    </div>
+                        <div class="autocomplete-container">
+                            <input type="text" class="autocomplete-input" id="scheduled-contacts-autocomplete" 
+                                   placeholder="Type to search contacts..." autocomplete="off">
+                            <div class="autocomplete-dropdown" id="scheduled-contacts-dropdown"></div>
+                        </div>
+                        <div class="selected-contacts-list" id="scheduled-selected-contacts"></div>
+                    <select class="form-input" id="scheduled-groups-select" multiple style="display: none;">
+                        <option value="">Choose groups...</option>
+                    </select>
+                    <small class="form-text">Hold Ctrl/Cmd to select multiple contacts or groups</small>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Scheduled Time</label>
+                    <input type="datetime-local" class="form-input" id="scheduled-time" required>
+                </div>
+                <div class="header-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeAddScheduledTaskModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Scheduled Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Details Modal -->
+    <div class="modal" id="contact-details-modal" style="display: none;">
+        <div class="contact-details-modal-content">
+            <div class="contact-details-modal-header">
+                <h2 class="contact-details-modal-title">Contact Details</h2>
+                <button class="contact-details-modal-close" onclick="closeContactDetailsModal()" title="Close">&times;</button>
+            </div>
+            <div class="contact-details-modal-body">
+                <div id="contact-details-content">
+                    <!-- Contact details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Sending Progress Modal -->
+    <div class="modal" id="sending-progress-modal" style="display: none;">
+        <div class="modal-content" style="max-width: 600px;">
+            <h2 class="modal-title">Sending Messages</h2>
+            <div class="progress-container">
+                <div class="progress-header">
+                    <div class="progress-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total:</span>
+                            <span class="stat-value" id="progress-total">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Sent:</span>
+                            <span class="stat-value success" id="progress-sent">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Failed:</span>
+                            <span class="stat-value error" id="progress-failed">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Remaining:</span>
+                            <span class="stat-value" id="progress-remaining">0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-percentage" id="progress-percentage">0%</div>
+                </div>
+                
+                <div class="current-message">
+                    <div class="current-label">Currently sending to:</div>
+                    <div class="current-contact" id="current-contact">Preparing...</div>
+                </div>
+                
+                <div class="progress-logs">
+                    <div class="logs-header">
+                        <span>Progress Log</span>
+                        <button class="btn btn-xs btn-secondary" onclick="clearProgressLogs()">Clear</button>
+                    </div>
+                    <div class="logs-content" id="progress-logs">
+                        <div class="log-item info">Initializing message sending...</div>
+                    </div>
+                </div>
+                
+                <div class="progress-actions">
+                    <button class="btn btn-danger" id="cancel-sending-btn" onclick="cancelSending()">Cancel Sending</button>
+                    <button class="btn btn-secondary" id="close-progress-btn" onclick="closeProgressModal()" style="display: none;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+    <script>
+        // Tampilkan waktu real-time
+        function updateFooterTime() {
+            const timeEl = document.getElementById("footer-time");
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            timeEl.textContent = `${h}:${m}:${s}`;
+        }
+        setInterval(updateFooterTime, 1000);
+        updateFooterTime();
+    </script>
+
+</body>
+</html>
